@@ -1,0 +1,172 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0;
+    padding:0;
+    width:100%;
+}
+
+
+.app, .book, .page, .bg {
+    position: absolute;
+    width: 1024px;
+    height: 768px;
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    overflow: hidden;
+}
+.page{
+    -webkit-transform-origin: 0 0;
+    -webkit-transition: all 2s ease-out;
+    z-index: 1;
+    background-color: white;
+}
+.pasada{
+    -webkit-transform: rotate3d(0,1,0,-90deg);
+}
+
+.book{
+    -webkit-perspective: 1500;
+}
+
+.prev, .next{
+    position: absolute;
+    bottom: 0;
+    width: 63px;
+    height: 63px;
+}
+.prev{
+    left: 0;
+    background-image: url(../img/previous_hd.png);
+}
+.next{
+    right: 0;
+    background-image: url(../img/next_hd.png);
+}
+.columna-izq{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.columna-der{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    text-align: right;
+}
+.columna-izq img, .columna-der img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.page0 img{
+    max-width: none;
+    height: 100%;
+    max-height: none;
+}
+
+.btn-empezar{
+    top: 50%;
+    margin-top: -25px;
+    line-height: 80px;
+    left: 50%;
+    width: 200px;
+    text-align: center;
+    margin-left: -100px;
+    font-size: 36px;
+    padding: 0 10px;
+    border-radius: 10px;
+    background: brown;
+    color: white;
+    vertical-align: middle;
+    position: absolute;
+}
+
+.texto{
+    padding: 30px;
+    font-size: 13px;
+    font-family: serif;
+}
+
+.capital{
+    font-size: 50px;
+    line-height: 20px;
+}
+
+.dialogo{
+    font-style: italic;
+    padding-left: 30px;
+    color: gray;
+}
+
+.bg{
+    background: url(../img/texturapapelviejo1.jpg);
+    opacity: 0.3;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+@media(min-width: 801px){
+    .texto{
+        font-size: 20px;
+    }
+}
+
+@-webkit-keyframes pequenyete
+{
+    0% {
+        max-height: 100%;
+        max-width: 100%;
+    }
+    100% {
+        max-height: 50%;
+        max-width: 50%;
+    }
+}
+.page3 img{
+    -webkit-animation: pequenyete 2s infinite linear;
+}
+
+@-webkit-keyframes grande
+{
+    0% {
+        max-height: 100%;
+        max-width: 100%;
+    }
+    100% {
+        max-height: 120%;
+        max-width: 120%;
+    }
+}
+.page4 img{
+    -webkit-animation: grande 1s infinite linear;
+}

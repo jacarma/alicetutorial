@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="remark,remarkjs,markdown,slideshow,presentation" />
+    <meta name="description" content="A simple, in-browser, markdown-driven slideshow tool." />
+    <title>Desarrollo de cuentos interactivos</title>
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+        margin-top: 22px;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #95CB29; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        -moz-border-radius: 5px;
+        -web-border-radius: 5px;
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+        .left-column h3:last-child {
+          color: #95CB29;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+
+      em{
+      	color: #95CB29;
+      	font-variant: normal;
+      	font-style: normal;
+      }
+
+      img{
+      	max-width: 100%;
+      }
+
+      code{
+        overflow: hidden;
+        line-height: 1.5;
+      }
+
+      .rapunzel {
+        background: url(res/rapunzel.jpg);
+        color: white;
+        text-align: right;
+        background-size: 100% 100% !important;
+      }
+      .iaia {
+        background: url(res/iaia.png);
+        color: white;
+        padding-top: 40%;
+        background-size: 100% 100% !important;
+      }
+      .yummy {
+        background: url(res/rabbit-burger.jpg);
+        color: white;
+        padding-top: 40%;
+        background-size: 100% 100% !important;
+      }
+      .kaguya {
+        background: url(res/kaguya.jpg);
+        color: white;
+        background-size: 100% 100% !important;
+        text-align: center;
+        padding-top: 40%;
+      }
+      .appcelerator{
+        background-color: #DBDFE2;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+#Desarrollo de cuentos interactivos
+Para tabletas, usando Cordova
+.footnote[Cristina Paredes y Javi Carrasco [oniric.co](https://oniric.co)]
+---
+template: inverse
+
+## Oniric.co
+---
+
+layout: false
+
+.left-column[
+## Oniric.co
+]
+.right-column[
+
+
+- Javi Carrasco [@jacarma](http://twitter.com/jacarma)
+
+  - Ingeniero en Informática
+  - Programador en MoneyMate.com
+
+- Cristina Paredes [@cine_indoor](http://twitter.com/cine_indoor)
+
+  - Historiadora del Arte 
+  - Máster en Historia del Cine 
+  - Maquetadora de libros 
+  - Bibliotecaria en paro :(
+
+Estamos casados y hacemos cuentos interactivos como side project.
+
+]
+
+---
+
+layout: false
+class: inverse, rapunzel
+
+
+# Rapunzel
+
+Salió en 2010
+
++4000 ventas hasta hoy
+
+Ilustrado por Alexandra Lara
+
+---
+
+
+layout: false
+class: inverse, iaia
+
+
+
+Solo en valenciano
+
+Dedicado a la madre de Cris
+
+Ilustrado por nosotros
+
+---
+
+layout: false
+class: inverse
+
+# Yummy Christmas y Yummy Easter
+
+Gratis. Más de 15.000 descargas
+
+![](res/rabbit-burger.jpg)
+
+---
+
+layout: false
+class: inverse, kaguya
+
+# Kaguya, la Princesa de la Luna
+
+Publicada en 2013
+
+Nuestra App más profesional
+
+Ilustrado por J.E. Pérez y Carolina Bensler
+
+---
+
+class: center, middle, inverse
+
+## Aplicaciones nativas, webapps y aplicaciones híbridas
+
+---
+
+layout: false
+.left-column[
+## Apps Nativas
+]
+.right-column[
+## Ventajas
+
+- Máximo rendimiento
+
+- Máximo aprovechamiento del hardware
+
+- Comercializable en las App Store
+
+- Más seguridad
+
+## Inconvenientes
+
+- Hay que programar aplicaciones distintas para cada plataforma (IOS, Android, WP...)
+
+- Eso supone mayores costes y posiblemente mayor tiempo de llegada al mercado
+
+]
+
+---
+
+.left-column[
+## Apps Nativas
+## Webapps
+]
+.right-column[
+## Ventajas
+
+- Un solo desarrollo sirve para todas las plataformas (en teoría)
+
+- Todos los clientes están actualizados siempre
+
+- No hay que aceptar las condiciones de las App Store
+
+- La mayoría de los desarrolladores conocen el lenguaje
+
+## Inconvenientes
+
+- No se puede acceder a algunas funcionalidades hardware
+
+- No hay notificaciones PUSH
+
+- No se comercializa en las App Store
+
+- Peor rendimiento
+
+- Solo funcionan online
+
+]
+
+---
+.left-column[
+## Apps Nativas
+## Webapps
+## Apps híblidas
+]
+.right-column[
+
+Se desarrollan con HTML, CSS y Javascript pero se incorporan a un proyecto nativo (Cordova) que da acceso a funcionalidades nativas y permite generar un paquete distribuible en las App Store.
+
+## Ventajas
+
+- Un solo desarrollo sirve para todas las plataformas (en teoría)
+
+- La mayoría de los desarrolladores conocen el lenguaje
+
+- Se puede acceder a la mayoría de las funcionalidades del teléfono
+
+## Inconvenientes
+
+- Peor rendimiento
+
+]
+
+---
+class: appcelerator
+
+![](res/appcelerator.png)
+
+* http://www.slideshare.net/appcelerator/appcelerator-html5-prezfinal
+
+---
+class: inverse, center, middle 
+
+# Cordova
+
+---
+
+.left-column[
+## Cordova
+]
+.right-column[
+
+
+Permite:
+
+- Generar un paquete distribuible en las App Stores a partir de código HTML, CSS y Javascript.
+
+- Generar ese paquete para Android, IOS, BlackBerry, WP7 ...
+
+- Acceder a servicios y componentes del dispositivo que no están disponibles desde Javascript:
+
+ - Acelerómetro
+ - Cámara
+ - Brújula
+ - Estado de la conexión
+ - Contactos
+ - Sistema de archivos
+ - Grabación de audio y vídeo
+ - Notificaciones
+ ...
+]
+---
+
+.left-column[
+## Cordova
+]
+.right-column[
+Lo que no hace:
+
+ - No aporta componentes UI, ni frameworks Javascript, etc.
+ - Requiere que nosotros los elijamos (o escribamos): Bootstrap, jQuery, Angular...
+
+Si queremos un framework que nos aporte todo podemos mirar [Ionic Framework](http://ionicframework.com/)
+
+]
+---
+
+<iframe width="100%" height="100%" src="http://www.youtube.com/embed/UtPWltTKcps" frameborder="0" allowfullscreen></iframe>
+
+---
+template: inverse
+
+## Manos a la obra
+---
+
+<iframe width="100%" height="100%" src="http://www.youtube.com/embed/TatY4WBgXM8" frameborder="0" allowfullscreen></iframe>
+
+---
+.left-column[
+## Recursos
+]
+.right-column[
+
+## Copiamos las imágenes, archivos de audio y javascript
+
+- Copiamos las imágenes de la carpeta *img* dentro de *www/img*
+
+- Copiamos la carpeta *snd* dentro de *www*
+
+- Copiamos los archivos de la carpeta *js* dentro de *www/js*
+
+]
+---
+
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+]
+.right-column[
+
+## En www/index.html 
+
+- Borramos el *H1* y el div con id=*deviceready*
+
+```html
+<body>
+  <div class="app">
+*
+  </div>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript">
+      app.initialize();
+  </script>
+</body>
+```
+]
+---
+
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+]
+.right-column[
+## En www/js/index.css
+
+- Del selector body quitamos todas las referencias al background y la de text-transform
+
+
+```css
+body {
+  -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+  -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+  font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  font-size:12px;
+  height:100%;
+  margin:0;
+  padding:0;
+  width:100%;
+}
+```
+
+- Borramos todos los demás selectores que están por debajo de body de forma que en el archivo solo quedarán los selectores _*_ y _body_
+
+]
+---
+
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+]
+.right-column[
+## En www/js/index.html 
+
+- Añadiremos dentro de *div.app*
+
+```html
+<body> 
+  <div class="app">
+*    <div class="book">
+*      <div class="page page0">0</div>
+*      <div class="page page1">1</div>
+*    </div>
+  </div>
+</div>
+```
+]
+---
+
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+]
+.right-column[
+## En www/js/index.css 
+
+- Añadiremos 
+
+```css
+.app, .book, .page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.page0{
+  background-color: red;
+}
+.page1{
+  background-color: blue;
+}
+```
+]
+---
+
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+]
+.right-column[
+## Vamos a probar lo que tenemos
+ 
+- Abrimos www/index.html con chrome
+- ¿Qué pagina se ve?
+- ¿Por qué?
+
+]
+---
+
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+]
+.right-column[
+## En www/js/index.html 
+
+- Cambiamos el orden de las páginas y añadimos los botones para pasar página
+
+```html
+<body> 
+  <div class="app">
+    <div class="book">
+*      <div class="page page1">1</div>
+*      <div class="page page0">0</div>
+    </div>
+*    <div class="prev"></div>
+*    <div class="next"></div>
+  </div>
+</div>
+```
+
+Añadimos jquery
+```html
+<script type="text/javascript" src="cordova.js"></script>
+*<script src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+```
+]
+---
+
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+]
+.right-column[
+## En www/js/index.css 
+
+- Borramos las reglas de page0 y page1
+
+```css
+*.page0{
+*  background-color: red;
+*}
+*.page1{
+*  background-color: blue;
+*}
+
+```
+]
+
+---
+
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+]
+.right-column[
+## En www/js/index.css 
+
+- Añadimos
+
+```css
+.prev, .next{
+    position: absolute;
+    bottom: 0;
+    width: 63px;
+    height: 63px;
+}
+.prev{
+    left: 0;
+    background-image: url(../img/previous_hd.png);
+}
+.next{
+    right: 0;
+    background-image: url(../img/next_hd.png);
+}
+
+```
+]
+---
+
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+]
+.right-column[
+## En www/js/index.css 
+
+- Añadimos
+
+```css
+
+.page{
+    -webkit-transform-origin: 0 0;
+    -webkit-transition: all 2s ease-out;
+    z-index: 1;
+    background-color: white;
+}
+.pasada{
+    -webkit-transform: rotate3d(0,1,0,-90deg);
+}
+.book{
+    -webkit-perspective: 1500;
+}
+```
+]
+---
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+]
+.right-column[
+## En www/js/index.js 
+
+- Añadimos
+
+```javascript
+function bind(element, fn) {
+    element.on('touch, mousedown', fn);
+}
+
+var paginaActual = 0;
+
+function next() {
+    var nombrePagina = '.page' + paginaActual;
+    $(nombrePagina).addClass('pasada');
+    paginaActual++;
+}
+
+function previous() {
+    paginaActual--;
+    var nombrePagina = '.page' + paginaActual;
+    $(nombrePagina).removeClass('pasada');
+}
+```
+]
+---
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+]
+.right-column[
+## En www/js/index.js 
+
+- Añadimos
+
+```javascript
+
+$(document).ready(function() {
+    bind($('.next'), next);
+    bind($('.prev'), previous);
+});
+```
+]
+
+---
+
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+]
+.right-column[
+## Vamos a probar lo que tenemos
+ 
+- Abrimos www/index.html con chrome
+
+Tenemos que ver la pagina 1 y los botones de atras y adelante.
+
+Al pulsar en ellos podemos pasar de una a otra y el paso es animado y 3D.
+
+- En el terminal
+
+```bash
+cordova emulate android
+```
+
+Debe lanzarse en el emulador la aplicación y debe funcionar como en chrome
+]
+---
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+### Página 1
+]
+.right-column[
+- Añadimos a index.css
+ 
+```css
+.columna-izq{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.columna-der{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    text-align: right;
+}
+.columna-izq img, .columna-der img{
+    max-width: 100%;
+    max-height: 100%;
+}
+```
+
+]
+---
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+### Portada
+]
+.right-column[
+- Añadimos a index.css
+ 
+```css
+.btn-empezar{
+    top: 50%;
+    margin-top: -25px;
+    line-height: 80px;
+    left: 50%;
+    width: 200px;
+    text-align: center;
+    margin-left: -100px;
+    font-size: 36px;
+    padding: 0 10px;
+    border-radius: 10px;
+    background: brown;
+    color: white;
+    vertical-align: middle;
+    position: absolute;
+}
+```
+
+]
+---
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+### Portada
+]
+.right-column[
+- Añadimos a index.css
+ 
+```css
+.bg{
+    background: url(../img/texturapapelviejo1.jpg);
+    opacity: 0.3;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+```
+
+]
+---
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+### Portada
+]
+.right-column[
+- En index.html
+ 
+```html
+<div class="book">
+  <div class="page page1">1</div>
+  <div class="page page0">
+*    <div class="columna-izq">
+*        <img src="img/0.jpg">
+*    </div>
+*    <div class="bg"></div>
+*    <div class="columna-der">
+*        <div class="btn-empezar">Empezar</div>
+*    </div>
+  </div>
+</div>
+```
+
+]
+---
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+### Portada
+]
+.right-column[
+- En index.js
+ 
+```javascript
+$(document).ready(function() {
+    bind($('.next'), next);
+    bind($('.prev'), previous);
+*    bind($('.btn-empezar'), next);
+})
+```
+
+]
+---
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+### Portada
+]
+.right-column[
+## Vamos a probarlo
+
+![](res/portada.png)
+
+
+]
+---
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+### Portada
+### Primeras páginas
+]
+.right-column[
+## En index.css
+
+```css
+.texto{
+    padding: 30px;
+    font-size: 13px;
+    font-family: serif;
+}
+.capital{
+    font-size: 50px;
+    line-height: 20px;
+}
+.dialogo{
+    font-style: italic;
+    padding-left: 30px;
+    color: gray;
+}
+```
+]
+---
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+### Portada
+### Primeras páginas
+]
+.right-column[
+## En index.html
+
+```html
+<div class="page page1">
+*  <div class="columna-der">
+*      <img src="img/1.png">
+*  </div>
+*  <div class="bg"></div>
+*  <div class="columna-izq">
+*    <div class="texto">
+*    </div>
+*  </div>
+</div>
+```
+]
+---
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+### Portada
+### Primeras páginas
+]
+.right-column[
+
+## El guión
+- Abrimos guion.txt en la carpeta de recursos.
+  - Cada linea en blanco separa una página de la siguiente
+- Copiamos el texto de la primera página y lo pegamos en *index.html* dentro del div que tiene clase *texto*
+- Probamos abriendo en Chrome. Aún podemos mejorarlo.
+- Vamos a separar en párrafos *<p>*, añadir una capitular *<span class="capital">* y distinguir los diálogos *<p class="dialogo">*
+]
+---
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+### Portada
+### Primeras páginas
+]
+.right-column[
+```html
+<p>
+<span class="capital">A</span>
+ su vez, Alicia hizo la tontería de seguirle.
+</p>
+<p class="dialogo">
+¡Vaya cosa rara! ¡Pero si el conejo se había metido por el hueco del tronco de un árbol! 
+</p>
+<p>
+Atolondradamente, ella le siguió y, con toda facilidad, entró por el agujero. Entonces pensó si salir sería tan fácil como entrar.
+</p><p>
+A pesar de ello, obsesionada como estaba por las idas y venidas del Conejo, siguió gateando tras él.
+Iba por un estrecho sendero que bajaba siempre y cuando el conejo pasó por el ojo de la cerradura de una puerta, pensó que le sería impsible hacer lo mismo. Llegó el momento en que fue a dar en un pozo muy profundo. El Conejo, por algún lado, seguía diciendo que iba a llegar tarde.
+</p><p>
+Por fin, su viaje continuó en una sala llena de mesitas repletas de manjares y destacaba una botella que decía Bébeme..                            
+</p>
+```
+]
+---
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+### Portada
+### Primeras páginas
+]
+.right-column[
+## Mejor, no?
+### Ahora vamos a hacer las páginas 2 - 4 sin mi ayuda
+- Poned la imagen en la columna derecha-izquierda de forma alterna
+- Separad el texto con párrafos
+- Poned capitular 
+- Poned diálogos
+- Podéis aplicar colores, y tipos de fuente, sed creativos.
+]
+---
+.left-column[
+## Recursos
+## Programación
+### Limpieza
+### Paso de páginas
+### Portada
+### Primeras páginas
+### Ancho de pantalla
+]
+.right-column[
+Al cambiar entre Chrome y el emulador vemos que el texto se puede ver demasiado grande o pequeño dependiendo del dispositivo.
+
+Vamos a arreglarlo com media-queries. En index.css
+
+```css
+@media(min-width: 801px){
+    .texto{
+        font-size: 20px;
+    }
+}
+```
+]
+---
+.left-column[
+## Programación
+### Paso de páginas
+### Portada
+### Primeras páginas
+### Ancho de pantalla
+### música
+]
+.right-column[
+
+## En index.js
+
+- Añadimos
+
+```javascript
+var musica = new Audio('snd/Call_to_Adventure.mp3');
+musica.loop = true;
+
+$(document).ready(function() {
+    bind($('.next'), next);
+    bind($('.prev'), previous);
+    bind($('.btn-empezar'), next);
+*    musica.play();
+})
+```
+]
+---
+.left-column[
+## Programación
+### Paso de páginas
+### Portada
+### Primeras páginas
+### Ancho de pantalla
+### música
+### animación
+]
+.right-column[
+
+## En index.css
+
+- En la página 3 la imagen se hará pequeña
+
+```css
+@-webkit-keyframes pequenyete
+{
+    0% {
+        max-height: 100%;
+        max-width: 100%;
+    }
+    100% {
+        max-height: 50%;
+        max-width: 50%;
+    }
+}
+.page3 img{
+    -webkit-animation: pequenyete 2s infinite linear;
+}
+```
+]
+---
+.left-column[
+## Programación
+### Paso de páginas
+### Portada
+### Primeras páginas
+### Ancho de pantalla
+### música
+### animación
+]
+.right-column[
+
+## En index.css
+
+- Mientras que en la página 4 la imagen se hará grande
+
+```css
+@-webkit-keyframes grande
+{
+    0% {
+        max-height: 100%;
+        max-width: 100%;
+    }
+    100% {
+        max-height: 120%;
+        max-width: 120%;
+    }
+}
+.page4 img{
+    -webkit-animation: grande 1s infinite linear;
+}
+```
+]
+---
+.left-column[
+## Programación
+### Paso de páginas
+### Portada
+### Primeras páginas
+### Ancho de pantalla
+### música
+### animación
+### interactividad
+]
+.right-column[
+
+## En index.js
+
+- Al tocar la página 2 sonará ruido de líquido en la botella
+
+```javascript
+var drop = new Audio('snd/water-drop.mp3');
+$(document).ready(function() {
+    bind($('.next'), next);
+    bind($('.prev'), previous);
+    bind($('.btn-empezar'), next);
+    musica.play();
+*    bind($('.page2'), function() {
+*        drop.play();
+*    });
+})
+
+```
+]
+---
+name: last-page
+template: inverse
+
+## Deberes
+---
+
+layout: false
+
+## Mejoras
+
+- Añadir el sonido *pageflip.mp3* al pasar página
+- Poner el resto de páginas
+- Hacer que una imagen de una vuelta completa al tocarla
+- Probar en un dispositivo real
+  - Conectar el móvil o tablet por USB
+  - ```cordova run android```
+- Cambiar el icono y el splash
+
+---
+name: last-page
+template: inverse
+
+## ¡Eso es todo!
+
+jacarma@gmail.com
+    </textarea>
+    <script src="res/remark-0.6.5.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var hljs = remark.highlighter.engine;
+    </script>
+    <script src="res/remark.language.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var slideshow = remark.create({
+          highlightStyle: 'monokai',
+          highlightLanguage: 'remark'
+        }) ;
+      // setTimeout(function(){
+      //   location.reload()
+      // }, 5000);
+    </script>
+  </body>
+</html>
